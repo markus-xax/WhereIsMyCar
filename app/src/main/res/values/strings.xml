@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Where Is My Car</string>
+    <string name="splash_screen">Это приложение помоет найти ваш автомобиль!</string>
 </resources>
