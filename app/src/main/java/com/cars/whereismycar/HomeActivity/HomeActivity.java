@@ -1,13 +1,17 @@
 package com.cars.whereismycar.HomeActivity;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.PointF;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.cars.whereismycar.API.HttpApi.HttpApi;
+import com.cars.whereismycar.API.Location.MyLocationListener;
 import com.cars.whereismycar.Env.Env;
 import com.cars.whereismycar.R;
 import com.yandex.mapkit.MapKit;
@@ -51,6 +55,14 @@ public class HomeActivity extends AppCompatActivity implements UserLocationObjec
         userLocationLayer.setHeadingEnabled(true);
 
         userLocationLayer.setObjectListener(this);
+
+        Button save = findViewById(R.id.save);
+
+        save.setOnClickListener(view -> {
+            MyLocationListener.SetUpLocationListener(this);
+            MyLocationListener.imHere.getLatitude();
+            MyLocationListener.imHere.getLongitude();
+        });
 
     }
 
