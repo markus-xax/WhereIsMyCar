@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.cars.whereismycar.Features.Permissions.GetPermissions;
 import com.cars.whereismycar.HomeActivity.HomeActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +14,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        GetPermissions permissions = new GetPermissions();
+        permissions.requestLocationPermission(this, this);
+
         new Thread(()-> {
             try {
                 Thread.sleep(1000);

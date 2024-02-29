@@ -1,4 +1,4 @@
-package com.cars.whereismycar.API;
+package com.cars.whereismycar.API.DB;
 
 import android.content.Context;
 import android.database.Cursor;
